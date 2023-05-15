@@ -1,0 +1,214 @@
+$sidebar-color: rgb(177, 243, 255);
+$card-color: rgb(212, 253, 253);
+$logo-color: rgb(117,120,123);
+$header-border: solid 3px rgb(71, 185, 185);
+
+
+
+body,#root{
+  width: 100vw;
+  height: 100vh;
+  margin: auto;
+  overflow: hidden;
+}
+
+.App{
+  width: 100%;
+  height: 100%;
+  //background-color: rgb(247, 247, 247);
+  display: grid;
+  grid-template-areas: "sidebar header header"
+                        "sidebar title rightbar"
+                        "sidebar dashboard rightbar";
+
+  grid-template-rows: 5rem 3rem;
+  grid-template-columns: 13% 70% 21rem;
+  
+  margin:auto;
+  
+  #Section-title{
+    grid-area: title;
+    margin-left: 1rem;
+  }
+
+}
+
+
+
+
+#Header{
+  display: flex;
+  color: $logo-color;
+  font-weight: bolder;
+  align-items: center;
+  background-image: linear-gradient(rgb(233, 254, 255),rgb(242, 254, 255));
+  min-height: 100%;
+  grid-area: header;  
+  border-bottom: $header-border;
+  box-shadow:0 3px  rgb(103, 216, 216);
+
+  #search-field{
+    width: 21%;
+    height: 36%;
+    font-size: 20px;
+    border-radius: 10px;
+    border: solid 3px $logo-color;
+    
+  }
+  #icon{
+    border-left: $header-border;
+    margin: 0.5rem;
+    padding-left: 0.3rem;
+    height: 20px;
+  }
+  #icon:hover{
+    cursor: pointer;
+    height: 22px
+  }
+
+  #header-list-items{
+    display: flex;
+    width: auto;
+    margin: auto 9% auto auto ;
+
+    li{
+      list-style: none;
+      margin-right:1rem;
+      background-color: $sidebar-color;
+      padding: 1rem;
+      border-radius: 18px;
+    }
+    li:hover{
+      cursor: pointer;
+      box-shadow: 0 0 3px 1px rgb(177, 177, 177);
+    }
+
+  }
+}
+
+
+#Sidebar{
+  display:flex;
+  color: $logo-color;
+  font-weight: 900;
+  flex-direction: column;
+  align-items: center;
+  grid-area: sidebar;
+  width: 100%;
+  height: 100%;
+  background-color: $sidebar-color;
+  //background-color: rgb(37, 54, 66);
+
+  #logo{
+    width: 80%;
+    margin: 1rem auto;
+  }
+
+ul{
+  width: 100%;
+}
+
+  li,ul{
+   list-style: none;
+   margin-left:0;
+   padding-left: 0;
+   font-size: larger;
+   margin: 1.5rem 1rem 3rem 1rem;
+   
+  }
+  li:hover{
+    color: rgb(77, 77, 77);
+    cursor: pointer;
+  }
+
+  h2{
+    margin-top:auto;
+  }
+}
+
+
+#Dashboard{
+  display: grid;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  width: 100%;
+  grid-area: dashboard;
+  grid-template-columns: repeat(3,auto);
+  grid-template-rows: repeat(3, auto);
+  margin: auto;
+  
+  
+  #Dashboard-item{
+    height: 81%;
+    width: 90%;
+    margin: auto;
+    background-color: $card-color;
+    border-radius: 6px;
+    border-bottom: solid 9px salmon;
+    overflow: hidden;
+    
+    h4{
+      margin: 1rem 0 0 1rem ;
+      font-size: 24px;
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    }
+    
+    p{
+      margin: 1rem;
+      font-size: 18px;
+      text-align: left;
+      word-spacing: 2px;
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif
+    }
+
+  }
+    
+  }
+
+
+  #Rightsidebar{
+    grid-area: rightbar;
+    min-height: 100%;
+    min-width: 100%;
+    display: flex;
+    flex-direction: column;
+    //align-items: center;
+    justify-content: flex-start;
+    margin: 3rem auto;
+    
+    h3{
+      margin: 2rem 0 2rem 0;
+    }
+    #Recommended,#Announcements{
+      border-left: solid 4px salmon;
+      
+
+      div{
+        margin: 0 3rem 1rem 0.5rem;
+        //padding-top: 1rem;
+        color: $logo-color;
+      }
+      hr{
+        width: 70%;
+        margin: 1rem;
+      }
+      
+      
+    }
+
+
+  }
+
+
+  .brand-icons{
+    width: 6rem;
+  
+  }
+
+  .brand-icons:hover{
+    border-radius: 6px;
+    padding-right: 10px;
+    border-right: solid 3px salmon;
+    cursor: pointer;
+  }
